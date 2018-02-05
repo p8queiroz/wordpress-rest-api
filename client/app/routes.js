@@ -9,7 +9,7 @@ function config ($stateProvider, $urlRouterProvider) {
     .state({
       name: 'Home',
       url: '/home',
-      templateUrl: './Source/pages/index.html',
+      templateUrl: './Source/pages/home.html',
       controller: 'PostListControler',
       controllerAs: 'ctrl'
     })

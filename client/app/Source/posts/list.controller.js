@@ -12,6 +12,6 @@ function PostListControler () {
   'ngInject'
   const ctrl = this
   
-  controle.log('this is my home list controller')
+  console.log('this is my home list controller')
 
 }

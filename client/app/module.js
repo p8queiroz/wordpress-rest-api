@@ -1,4 +1,4 @@
-//import 'jquery/jquery.min'
+import 'jquery/dist/jquery.min'
 import angular from 'angular'
 import '@uirouter/angularjs'
 

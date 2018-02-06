@@ -3,18 +3,18 @@ import './save.scss'
 
 angular
   .module('app')
-  .controller('HomeControler', HomeControler)
+  .controller('PostControler', PostControler)
 
-  HomeControler.$inject = []
+  PostControler.$inject = []
 
-function HomeControler ($scope, $windowInstance, message, name, Vendor) {
+function PostControler ($scope) {
 
   // noinspection BadExpressionStatementJS
   'ngInject'
 
   const ctrl = this
 
-  console.log('this is the HomeControler')
+  console.log('this is the PostControler')
 
   
 }

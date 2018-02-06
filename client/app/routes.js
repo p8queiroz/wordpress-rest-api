@@ -13,6 +13,14 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'PostListControler',
       controllerAs: 'ctrl'
     })
+
+    .state({
+      name: 'Post',
+      url: '/post',
+      templateUrl: './Source/pages/home.1.html',
+      controller: 'PostControler',
+      controllerAs: 'ctrl'
+    })
     
   $urlRouterProvider.otherwise('/home')
 }

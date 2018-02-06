@@ -1,8 +1,11 @@
-import 'jquery/dist/jquery.min'
 import angular from 'angular'
 import '@uirouter/angularjs'
+import 'angular-ui-bootstrap'
+import 'angular-cookies'
 
 angular
   .module('app', [
-    'ui.router'
+    'ui.bootstrap', 
+    'ui.router',
+    'ngCookies'
   ])

@@ -3,6 +3,7 @@ import './index.css'
 
 import './module'
 import './routes'
+import './Source/libs/js'
 
 import './Source/posts/posts.service'
 import './Source/posts/list.controller'

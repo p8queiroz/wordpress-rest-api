@@ -1,5 +1,7 @@
+import angular from 'angular'
+
 angular
-    .module('app')
+    .module('app.directives.rdWidgetFooter', [])
     .directive('rdWidgetFooter', rdWidgetFooter);
 
 function rdWidgetFooter() {

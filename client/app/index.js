@@ -7,7 +7,13 @@ import './routes'
 import './master-ctrl'
 import './alert-ctrl'
 
-//
-import './Source/posts/list.controller'
+//services
 import './Source/posts/posts.service'
+import './Source/company/company.service'
+
+//controllers
+import './Source/posts/list.controller'
 import './Source/posts/save.controller'
+
+import './Source/company/list.controller'
+import './Source/company/save.controller'

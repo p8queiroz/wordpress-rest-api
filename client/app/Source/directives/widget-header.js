@@ -1,5 +1,7 @@
+import angular from 'angular'
+
 angular
-    .module('app')
+    .module('app.directives.rdWidgetHeader', [])
     .directive('rdWidgetHeader', rdWidgetTitle);
 
 function rdWidgetTitle() {

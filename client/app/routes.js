@@ -7,7 +7,7 @@ angular
 function config ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state({
-      name: 'Home',
+      name: 'home',
       url: '/home',
       templateUrl: './Source/pages/posts.html',
       controller: 'PostListControler',
@@ -15,10 +15,10 @@ function config ($stateProvider, $urlRouterProvider) {
     })
 
     .state({
-      name: 'Post',
-      url: '/post',
-      templateUrl: './Source/pages/home.1.html',
-      controller: 'PostControler',
+      name: 'company',
+      url: '/company',
+      templateUrl: './Source/pages/company.html',
+      controller: 'CompanyListControler',
       controllerAs: 'ctrl'
     })
     

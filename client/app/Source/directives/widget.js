@@ -1,5 +1,7 @@
+import angular from 'angular'
+
 angular
-    .module('app')
+    .module('app.directives.rdWidget', [])
     .directive('rdWidget', rdWidget);
 
 function rdWidget() {

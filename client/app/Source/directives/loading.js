@@ -1,5 +1,8 @@
+import angular from 'angular'
+
+
 angular
-    .module('app')
+    .module('app.directives.rdLoading', [])
     .directive('rdLoading', rdLoading);
 
 function rdLoading() {

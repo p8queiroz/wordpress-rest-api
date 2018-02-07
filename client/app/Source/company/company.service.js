@@ -2,9 +2,9 @@ import angular from 'angular'
 
 angular
   .module('app')
-  .service('Post', Post)
+  .service('Company', Company)
 
-function Post ($http, $filter, $q, Utils) {
+function Company ($http, $filter, $q) {
   
   const ctrl = this
 

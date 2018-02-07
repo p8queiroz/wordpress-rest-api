@@ -7,12 +7,13 @@ import './master-ctrl'
 import './alert-ctrl'
 
 //services
-import './Source/posts/posts.service'
-import './Source/company/company.service'
+import './Source/models/posts/posts.service'
+import './Source/models/company/company.service'
 
 //controllers
-import './Source/posts/list.controller'
-import './Source/posts/save.controller'
+import './Source/models/home/list.controller'
+import './Source/models/posts/list.controller'
+import './Source/models/posts/save.controller'
 
-import './Source/company/list.controller'
-import './Source/company/save.controller'
+import './Source/models/company/list.controller'
+import './Source/models/company/save.controller'

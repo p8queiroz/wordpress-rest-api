@@ -17676,17 +17676,19 @@ __webpack_require__(420);
 
 __webpack_require__(421);
 
-__webpack_require__(425);
+__webpack_require__(465);
 
-__webpack_require__(434);
+__webpack_require__(464);
 
-__webpack_require__(422);
+__webpack_require__(466);
 
-__webpack_require__(426);
+__webpack_require__(452);
 
-__webpack_require__(435);
+__webpack_require__(455);
 
-__webpack_require__(438);
+__webpack_require__(458);
+
+__webpack_require__(461);
 
 /***/ }),
 /* 386 */
@@ -63099,14 +63101,26 @@ function config($stateProvider, $urlRouterProvider) {
   $stateProvider.state({
     name: 'home',
     url: '/home',
-    templateUrl: './Source/pages/posts.html',
+    templateUrl: './Source/pages/home/list.html',
+    controller: 'HomeControler',
+    controllerAs: 'ctrl'
+  }).state({
+    name: 'post',
+    url: '/post',
+    templateUrl: './Source/pages/post/list.html',
     controller: 'PostListControler',
     controllerAs: 'ctrl'
   }).state({
     name: 'company',
     url: '/company',
-    templateUrl: './Source/pages/company.html',
+    templateUrl: './Source/pages/company/list.html',
     controller: 'CompanyListControler',
+    controllerAs: 'ctrl'
+  }).state({
+    name: 'companysave',
+    url: '/companysave',
+    templateUrl: './Source/pages/company/save.html',
+    controller: 'CompanyControler',
     controllerAs: 'ctrl'
   });
 
@@ -63192,183 +63206,13 @@ function AlertsCtrl($scope) {
 }
 
 /***/ }),
-/* 422 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(53);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-__webpack_require__(423);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('app').controller('PostListControler', PostListControler);
-
-PostListControler.$inject = ['$state'];
-
-function PostListControler($state) {
-  // noinspection BadExpressionStatementJS
-  'ngInject';
-
-  var ctrl = this;
-
-  console.log('this is my home  PostListControler');
-}
-
-/***/ }),
-/* 423 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(424);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(111)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 424 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(110)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 425 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(53);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('app').service('Post', Post);
-
-function Post($http, $filter, $q) {
-
-  var ctrl = this;
-
-  this.list = function () {
-    console.log('this request is made');
-  };
-
-  var service = {
-    list: this.list
-  };
-
-  return service;
-}
-
-/***/ }),
-/* 426 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(53);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-__webpack_require__(427);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('app').controller('PostControler', PostControler);
-
-PostControler.$inject = [];
-
-function PostControler($scope) {
-
-  // noinspection BadExpressionStatementJS
-  'ngInject';
-
-  var ctrl = this;
-
-  console.log('this is the PostControler');
-}
-
-/***/ }),
-/* 427 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(428);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(111)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 428 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(110)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
 /* 429 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -63503,181 +63347,13 @@ function rdWidget() {
 };
 
 /***/ }),
-/* 434 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(53);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('app').service('Company', Company);
-
-function Company($http, $filter, $q) {
-
-  var ctrl = this;
-
-  this.list = function () {
-    console.log('this request is made');
-  };
-
-  var service = {
-    list: this.list
-  };
-
-  return service;
-}
-
-/***/ }),
-/* 435 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(53);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-__webpack_require__(436);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('app').controller('CompanyListControler', CompanyListControler);
-
-CompanyListControler.$inject = ['$state'];
-
-function CompanyListControler($state) {
-  // noinspection BadExpressionStatementJS
-  'ngInject';
-
-  var ctrl = this;
-  console.log('this is my home  CompanyListControler');
-}
-
-/***/ }),
-/* 436 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(437);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(111)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 437 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(110)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 438 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _angular = __webpack_require__(53);
-
-var _angular2 = _interopRequireDefault(_angular);
-
-__webpack_require__(439);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_angular2.default.module('app').controller('CompanyControler', CompanyControler);
-
-CompanyControler.$inject = [];
-
-function CompanyControler($scope) {
-
-  // noinspection BadExpressionStatementJS
-  'ngInject';
-
-  var ctrl = this;
-  console.log('this is the CompanyControler');
-}
-
-/***/ }),
-/* 439 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(440);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {"hmr":true}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(111)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss", function() {
-			var newContent = require("!!../../../node_modules/css-loader/index.js??ref--0-1!../../../node_modules/sass-loader/lib/loader.js!../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 440 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(110)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
 /* 441 */,
 /* 442 */,
 /* 443 */
@@ -63754,6 +63430,386 @@ module.exports = "data:font/ttf;base64,AAEAAAAPAIAAAwBwRkZUTW0ql9wAAAD8AAAAHEdER
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "89889688147bd7575d6327160d64e760.svg";
+
+/***/ }),
+/* 450 */,
+/* 451 */,
+/* 452 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+__webpack_require__(453);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').controller('PostListControler', PostListControler);
+
+PostListControler.$inject = ['$state'];
+
+function PostListControler($state) {
+  // noinspection BadExpressionStatementJS
+  'ngInject';
+
+  var ctrl = this;
+
+  console.log('this is my home  PostListControler');
+}
+
+/***/ }),
+/* 453 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(454);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(111)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 454 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(110)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 455 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+__webpack_require__(456);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').controller('PostControler', PostControler);
+
+PostControler.$inject = [];
+
+function PostControler($scope) {
+
+  // noinspection BadExpressionStatementJS
+  'ngInject';
+
+  var ctrl = this;
+
+  console.log('this is the PostControler');
+}
+
+/***/ }),
+/* 456 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(457);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(111)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 457 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(110)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 458 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+__webpack_require__(459);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').controller('CompanyListControler', CompanyListControler);
+
+CompanyListControler.$inject = ['$state'];
+
+function CompanyListControler($state) {
+  // noinspection BadExpressionStatementJS
+  'ngInject';
+
+  var ctrl = this;
+  console.log('this is my home  CompanyListControler');
+}
+
+/***/ }),
+/* 459 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(460);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(111)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./list.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 460 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(110)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 461 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+__webpack_require__(462);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').controller('CompanyControler', CompanyControler);
+
+CompanyControler.$inject = [];
+
+function CompanyControler($scope) {
+
+  // noinspection BadExpressionStatementJS
+  'ngInject';
+
+  var ctrl = this;
+  console.log('this is the CompanyControler');
+}
+
+/***/ }),
+/* 462 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(463);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {"hmr":true}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(111)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss", function() {
+			var newContent = require("!!../../../../node_modules/css-loader/index.js??ref--0-1!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/postcss-loader/lib/index.js??ref--0-3!./save.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 463 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(110)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 464 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').service('Company', Company);
+
+function Company($http, $filter, $q) {
+
+  var ctrl = this;
+
+  this.list = function () {
+    console.log('this request is made');
+  };
+
+  var service = {
+    list: this.list
+  };
+
+  return service;
+}
+
+/***/ }),
+/* 465 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').service('Post', Post);
+
+function Post($http, $filter, $q) {
+
+  var ctrl = this;
+
+  this.list = function () {
+    console.log('this request is made');
+  };
+
+  var service = {
+    list: this.list
+  };
+
+  return service;
+}
+
+/***/ }),
+/* 466 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(53);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').controller('HomeControler', HomeControler);
+
+HomeControler.$inject = ['$state'];
+
+function HomeControler($state) {
+  // noinspection BadExpressionStatementJS
+  'ngInject';
+
+  var ctrl = this;
+
+  console.log('this is my home  HomeControler');
+}
 
 /***/ })
 /******/ ]);

@@ -9,16 +9,32 @@ function config ($stateProvider, $urlRouterProvider) {
     .state({
       name: 'home',
       url: '/home',
-      templateUrl: './Source/pages/posts.html',
-      controller: 'PostListControler',
+      templateUrl: './Source/pages/home/list.html',
+      controller: 'HomeControler',
       controllerAs: 'ctrl'
     })
 
     .state({
+      name: 'post',
+      url: '/post',
+      templateUrl: './Source/pages/post/list.html',
+      controller: 'PostListControler',
+      controllerAs: 'ctrl'
+    })
+    
+    .state({
       name: 'company',
       url: '/company',
-      templateUrl: './Source/pages/company.html',
+      templateUrl: './Source/pages/company/list.html',
       controller: 'CompanyListControler',
+      controllerAs: 'ctrl'
+    })
+
+    .state({
+      name: 'companysave',
+      url: '/companysave',
+      templateUrl: './Source/pages/company/save.html',
+      controller: 'CompanyControler',
       controllerAs: 'ctrl'
     })
     

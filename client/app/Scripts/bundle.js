@@ -17726,6 +17726,8 @@ __webpack_require__(455);
 
 __webpack_require__(456);
 
+__webpack_require__(457);
+
 /***/ }),
 /* 388 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -68070,6 +68072,12 @@ function config($stateProvider, $urlRouterProvider) {
     templateUrl: './Source/pages/modal/modal1.html',
     controller: 'ModalController',
     controllerAs: 'ctrl'
+  }).state({
+    name: 'user',
+    url: '/user',
+    templateUrl: './Source/pages/user/index.html',
+    controller: 'UserController',
+    controllerAs: 'ctrl'
   });
 
   $urlRouterProvider.otherwise('/home');
@@ -68682,6 +68690,32 @@ function Modal1Controller($uibModalInstance, items) {
   ctrl.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };
+}
+
+/***/ }),
+/* 457 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(13);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_angular2.default.module('app').controller('UserController', UserController);
+
+UserController.$inject = ['$state'];
+
+function UserController($state) {
+  // noinspection BadExpressionStatementJS
+  'ngInject';
+
+  var ctrl = this;
+
+  console.log('this is my UserController');
 }
 
 /***/ })

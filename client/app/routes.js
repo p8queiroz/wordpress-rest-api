@@ -54,5 +54,13 @@ function config ($stateProvider, $urlRouterProvider) {
       controllerAs: 'ctrl'
     })
 
+    .state({
+      name: 'user',
+      url: '/user',
+      templateUrl: './Source/pages/user/index.html',
+      controller: 'UserController',
+      controllerAs: 'ctrl'
+    })
+
   $urlRouterProvider.otherwise('/home')
 }

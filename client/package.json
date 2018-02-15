@@ -9,10 +9,13 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.10",
     "angular": "^1.6.6",
+    "angular-animate": "^1.6.9",
     "angular-cookies": "~1.5.0",
     "angular-ui-bootstrap": "^2.5.6",
-    "bootstrap": "~3.3.6",
+    "bootstrap": "^3.3.7",
     "font-awesome": "~4.5.0",
+    "ng-sanitize": "0.0.2",
+    "popper.js": "^1.12.9",
     "rdash-ui": "1.0.*"
   },
   "devDependencies": {
@@ -32,7 +35,6 @@
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
     "file-loader": "^1.1.5",
-    "jquery": "^2.1.4",
     "ng-annotate-loader": "^0.6.1",
     "node-sass": "^4.5.3",
     "postcss-flexbugs-fixes": "^3.2.0",

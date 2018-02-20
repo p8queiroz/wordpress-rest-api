@@ -68180,9 +68180,29 @@ function Post($http, $filter, $q) {
 
   var ctrl = this;
 
-  this.list = function () {
-    console.log('this request is made');
+  ctrl.list = function () {
+    return $http({
+      url: 'xxxx',
+      method: 'GET'
+    }).then(_treatResponse).catch(_treatError);
   };
+
+  function _treatResponse(response) {
+    return response.data.map(_parsePost);
+  }
+
+  function _treatError(error) {
+    console.log('XHR Failed for asdfasdf.' + error.data);
+  }
+
+  function _parsePost(post) {
+    return {
+      ID: post.id,
+      title: post.title,
+      date: post.date,
+      author: post.author
+    };
+  }
 
   var service = {
     list: this.list
@@ -68264,15 +68284,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _angular2.default.module('app').controller('PostListControler', PostListControler);
 
-PostListControler.$inject = ['$state'];
+PostListControler.$inject = ['$state', 'Post'];
 
-function PostListControler($state) {
+function PostListControler($state, Post) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
+  vm.posts = [];
 
-  console.log('this is my home  PostListControler');
+  showPosts();
+
+  function showPosts() {
+
+    return getPosts().then(function (data) {
+      console.log(data);
+    });
+  }
+
+  function getPosts() {
+    return Post.list().then(function (data) {
+      vm.posts = data;
+      return vm.posts;
+    });
+  }
 }
 
 /***/ }),

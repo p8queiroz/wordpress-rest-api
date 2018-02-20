@@ -5,13 +5,30 @@ angular
   .module('app')
   .controller('PostListControler', PostListControler)
 
-  PostListControler.$inject = ['$state']
+  PostListControler.$inject = ['$state', 'Post']
 
-function PostListControler ($state) {
+function PostListControler ($state, Post) {
   // noinspection BadExpressionStatementJS
   'ngInject'
-  const ctrl = this
-  
-  console.log('this is my home  PostListControler')
+  const vm = this
+  vm.posts = []
+
+  showPosts()
+
+  function showPosts() {
+ 
+    return getPosts().then(function(data) {
+      console.log(data)
+    });
+  }
+
+  function getPosts() {
+        return Post.list()
+            .then(function(data) {
+                vm.posts = data;
+                return vm.posts;
+             
+        });
+  } 
 
 }

@@ -8,7 +8,6 @@ angular
 function rdLoading() {
     var directive = {
         restrict: 'AE',
-        template: '<div class="loading"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>'
-    };
+        template: '<div class="spinner">   <div class="bounce1"></div>   <div class="bounce2"></div>   <div class="bounce3"></div> </div>'    };
     return directive;
 };

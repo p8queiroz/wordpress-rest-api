@@ -7,7 +7,7 @@ import 'angular-cookies'
 import './Source/libs/boostrap/css/bootstrap.min.css'
 //TODO - IMPORT MODULES FROM NODE_DIRECTORY import '../node_modules/bootstrap/dist/css/bootstrap.css'
 //import 'bootstrap/dist/bootstrap.css'
-import './Source/libs/css/rdash.min.css'
+import './Source/libs/css/main.css'
 
 //import directives
 import './Source/directives/widget.js'

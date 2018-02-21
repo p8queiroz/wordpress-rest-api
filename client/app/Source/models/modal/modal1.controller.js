@@ -10,7 +10,6 @@ angular
 
 function Modal1Controller($uibModalInstance, items) {
 
-  console.log('this is my console app Modal1Controller...')  
   var vm = this;
   vm.items = items;
   vm.selected = {

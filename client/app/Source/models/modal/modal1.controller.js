@@ -11,17 +11,17 @@ angular
 function Modal1Controller($uibModalInstance, items) {
 
   console.log('this is my console app Modal1Controller...')  
-  var ctrl = this;
-  ctrl.items = items;
-  ctrl.selected = {
-    item: ctrl.items[0]
+  var vm = this;
+  vm.items = items;
+  vm.selected = {
+    item: vm.items[0]
   };
 
-  ctrl.ok = function () {
-    $uibModalInstance.close(ctrl.selected.item);
+  vm.ok = function () {
+    $uibModalInstance.close(vm.selected.item);
   };
 
-  ctrl.cancel = function () {
+  vm.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };
 

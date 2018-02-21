@@ -9,7 +9,7 @@ angular
 function UserController ($state) {
   // noinspection BadExpressionStatementJS
   'ngInject'
-  const ctrl = this
+  const vm = this
   
   console.log('this is my UserController')
 

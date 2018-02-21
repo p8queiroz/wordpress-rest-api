@@ -6,9 +6,9 @@ angular
 
 function Company ($http, $filter, $q) {
   
-  const ctrl = this
+  const vm = this
 
-  this.list = () => {
+  vm.list = () => {
     console.log('this request is made');
   }
   

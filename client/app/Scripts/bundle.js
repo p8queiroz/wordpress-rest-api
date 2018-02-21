@@ -68212,9 +68212,9 @@ _angular2.default.module('app').service('Post', Post);
 
 function Post($http, $filter, $q) {
 
-  var ctrl = this;
+  var vm = this;
 
-  ctrl.list = function () {
+  vm.list = function () {
     return $http({
       url: 'http://p8queiroz.com/wp-json/wp/v2/posts/',
       method: 'GET'
@@ -68263,9 +68263,9 @@ _angular2.default.module('app').service('Company', Company);
 
 function Company($http, $filter, $q) {
 
-  var ctrl = this;
+  var vm = this;
 
-  this.list = function () {
+  vm.list = function () {
     console.log('this request is made');
   };
 
@@ -68297,7 +68297,7 @@ function HomeControler($state) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
 
   console.log('this is my home  HomeControler');
 }
@@ -68414,7 +68414,7 @@ function PostControler($scope) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
 
   console.log('this is the PostControler');
 }
@@ -68487,7 +68487,7 @@ function CompanyListControler($state) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
   console.log('this is my home  CompanyListControler');
 }
 
@@ -68560,7 +68560,7 @@ function CompanyControler($scope) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
   console.log('this is the CompanyControler');
 }
 
@@ -68630,7 +68630,7 @@ function SampleController($state) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
 
   console.log('this is my home  SampleController');
 }
@@ -68652,57 +68652,57 @@ ModalController.$inject = ['$uibModal', '$document'];
 
 function ModalController($uibModal, $document) {
 
-  var ctrl = this;
-  ctrl.items = ['item1', 'item2', 'item3'];
+  var vm = this;
+  vm.items = ['item1', 'item2', 'item3'];
 
-  ctrl.animationsEnabled = true;
+  vm.animationsEnabled = true;
 
-  ctrl.open = function (size, parentSelector) {
+  vm.open = function (size, parentSelector) {
     var parentElem = parentSelector ? angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
-      animation: ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       ariaLabelledBy: 'modal-title',
       ariaDescribedBy: 'modal-body',
       templateUrl: 'myModalContent.html',
       controller: 'Modal1Controller',
-      controllerAs: 'ctrl',
+      controllerAs: 'vm',
       size: size,
       appendTo: parentElem,
       resolve: {
         items: function items() {
-          return ctrl.items;
+          return vm.items;
         }
       }
     });
 
     modalInstance.result.then(function (selectedItem) {
-      ctrl.selected = selectedItem;
+      vm.selected = selectedItem;
     }, function () {
       console.log('Modal dismissed at: ' + new Date());
     });
   };
 
-  ctrl.openComponentModal = function () {
+  vm.openComponentModal = function () {
     var modalInstance = $uibModal.open({
-      animation: ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       component: 'modalComponent',
       resolve: {
         items: function items() {
-          return ctrl.items;
+          return vm.items;
         }
       }
     });
 
     modalInstance.result.then(function (selectedItem) {
-      ctrl.selected = selectedItem;
+      vm.selected = selectedItem;
     }, function () {
       console.log('modal-component dismissed at: ' + new Date());
     });
   };
 
-  ctrl.openMultipleModals = function () {
+  vm.openMultipleModals = function () {
     $uibModal.open({
-      animation: ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       ariaLabelledBy: 'modal-title-bottom',
       ariaDescribedBy: 'modal-body-bottom',
       templateUrl: 'stackedModal.html',
@@ -68713,7 +68713,7 @@ function ModalController($uibModal, $document) {
     });
 
     $uibModal.open({
-      animation: ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       ariaLabelledBy: 'modal-title-top',
       ariaDescribedBy: 'modal-body-top',
       templateUrl: 'stackedModal.html',
@@ -68724,8 +68724,8 @@ function ModalController($uibModal, $document) {
     });
   };
 
-  ctrl.toggleAnimation = function () {
-    ctrl.animationsEnabled = !ctrl.animationsEnabled;
+  vm.toggleAnimation = function () {
+    vm.animationsEnabled = !vm.animationsEnabled;
   };
 }
 
@@ -68747,17 +68747,17 @@ Modal1Controller.$inject = ['$uibModalInstance', 'items'];
 function Modal1Controller($uibModalInstance, items) {
 
   console.log('this is my console app Modal1Controller...');
-  var ctrl = this;
-  ctrl.items = items;
-  ctrl.selected = {
-    item: ctrl.items[0]
+  var vm = this;
+  vm.items = items;
+  vm.selected = {
+    item: vm.items[0]
   };
 
-  ctrl.ok = function () {
-    $uibModalInstance.close(ctrl.selected.item);
+  vm.ok = function () {
+    $uibModalInstance.close(vm.selected.item);
   };
 
-  ctrl.cancel = function () {
+  vm.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };
 }
@@ -68783,7 +68783,7 @@ function UserController($state) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
-  var ctrl = this;
+  var vm = this;
 
   console.log('this is my UserController');
 }

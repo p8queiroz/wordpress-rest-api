@@ -16,11 +16,11 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab1">
                                                 <ul>
-                                                        <li ng-repeat="item in ctrl.items">
-                                                            <a href="#" ng-click="$event.preventDefault(); ctrl.selected.item = item">{{ item }}</a>
+                                                        <li ng-repeat="item in vm.items">
+                                                            <a href="#" ng-click="$event.preventDefault(); vm.selected.item = item">{{ item }}</a>
                                                         </li>
                                                     </ul>
-                                                    Selected: <b>{{ ctrl.selected.item }}</b>
+                                                    Selected: <b>{{ vm.selected.item }}</b>
                                         </div>
                                     </div>
                                         <div class="tab-pane" id="tab2">
@@ -31,8 +31,8 @@
                            
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-primary" type="button" ng-click="ctrl.ok()">OK</button>
-                            <button class="btn btn-warning" type="button" ng-click="ctrl.cancel()">Cancel</button>
+                            <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
+                            <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
                         </div>
                 </div>
             </div>
@@ -47,20 +47,20 @@
             </div>
         </script>
     
-        <button type="button" class="btn btn-default" ng-click="ctrl.open()">Open me!</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.open('lg')">Large modal</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.open('sm')">Small modal</button>
+        <button type="button" class="btn btn-default" ng-click="vm.open()">Open me!</button>
+        <button type="button" class="btn btn-default" ng-click="vm.open('lg')">Large modal</button>
+        <button type="button" class="btn btn-default" ng-click="vm.open('sm')">Small modal</button>
         <button type="button" 
             class="btn btn-default" 
-            ng-click="ctrl.open('sm', '.modal-parent')">
+            ng-click="vm.open('sm', '.modal-parent')">
                 Modal appended to a custom parent
         </button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.toggleAnimation()">Toggle Animation ({{ ctrl.animationsEnabled }})</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.openComponentModal()">Open a component modal!</button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.openMultipleModals()">
+        <button type="button" class="btn btn-default" ng-click="vm.toggleAnimation()">Toggle Animation ({{ vm.animationsEnabled }})</button>
+        <button type="button" class="btn btn-default" ng-click="vm.openComponentModal()">Open a component modal!</button>
+        <button type="button" class="btn btn-default" ng-click="vm.openMultipleModals()">
             Open multiple modals at once 
         </button>
-        <div ng-show="ctrl.selected">Selection from a modal: {{ ctrl.selected }}</div>
+        <div ng-show="vm.selected">Selection from a modal: {{ vm.selected }}</div>
         <div class="modal-parent">
         </div>
 </div>

@@ -6,9 +6,9 @@ angular
 
 function Post ($http, $filter, $q) {
   
-  const ctrl = this
+  const vm = this
 
-  ctrl.list = () => $http({
+  vm.list = () => $http({
     url: `http://p8queiroz.com/wp-json/wp/v2/posts/`,
     method: 'GET'
   })

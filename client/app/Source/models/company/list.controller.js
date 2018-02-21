@@ -10,7 +10,7 @@ angular
 function CompanyListControler ($state) {
   // noinspection BadExpressionStatementJS
   'ngInject'
-  const ctrl = this
+  const vm = this
   console.log('this is my home  CompanyListControler')
 
 }

@@ -10,58 +10,58 @@ angular
 
 function ModalController($uibModal, $document) {
 
-    var ctrl = this;
-    ctrl.items = ['item1', 'item2', 'item3'];
+    var vm = this;
+    vm.items = ['item1', 'item2', 'item3'];
   
-    ctrl.animationsEnabled = true;
+    vm.animationsEnabled = true;
   
-    ctrl.open = function (size, parentSelector) {
+    vm.open = function (size, parentSelector) {
       var parentElem = parentSelector ? 
         angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
       var modalInstance = $uibModal.open({
-        animation: ctrl.animationsEnabled,
+        animation: vm.animationsEnabled,
         ariaLabelledBy: 'modal-title',
         ariaDescribedBy: 'modal-body',
         templateUrl: 'myModalContent.html',
         controller: 'Modal1Controller',
-        controllerAs: 'ctrl',
+        controllerAs: 'vm',
         size: size,
         appendTo: parentElem,
         resolve: {
           items: function () {
-            return ctrl.items;
+            return vm.items;
           }
         }
       });
   
       modalInstance.result.then(function (selectedItem) {
-        ctrl.selected = selectedItem;
+        vm.selected = selectedItem;
       }, function () {
         console.log('Modal dismissed at: ' + new Date());
       });
     };
   
-    ctrl.openComponentModal = function () {
+    vm.openComponentModal = function () {
       var modalInstance = $uibModal.open({
-        animation: ctrl.animationsEnabled,
+        animation: vm.animationsEnabled,
         component: 'modalComponent',
         resolve: {
           items: function () {
-            return ctrl.items;
+            return vm.items;
           }
         }
       });
   
       modalInstance.result.then(function (selectedItem) {
-        ctrl.selected = selectedItem;
+        vm.selected = selectedItem;
       }, function () {
         console.log('modal-component dismissed at: ' + new Date());
       });
     };
   
-    ctrl.openMultipleModals = function () {
+    vm.openMultipleModals = function () {
       $uibModal.open({
-        animation: ctrl.animationsEnabled,
+        animation: vm.animationsEnabled,
         ariaLabelledBy: 'modal-title-bottom',
         ariaDescribedBy: 'modal-body-bottom',
         templateUrl: 'stackedModal.html',
@@ -72,7 +72,7 @@ function ModalController($uibModal, $document) {
       });
   
       $uibModal.open({
-        animation: ctrl.animationsEnabled,
+        animation: vm.animationsEnabled,
         ariaLabelledBy: 'modal-title-top',
         ariaDescribedBy: 'modal-body-top',
         templateUrl: 'stackedModal.html',
@@ -83,8 +83,8 @@ function ModalController($uibModal, $document) {
       });
     };
   
-    ctrl.toggleAnimation = function () {
-      ctrl.animationsEnabled = !ctrl.animationsEnabled;
+    vm.toggleAnimation = function () {
+      vm.animationsEnabled = !vm.animationsEnabled;
     };
    
 }

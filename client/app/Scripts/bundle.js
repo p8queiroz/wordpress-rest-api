@@ -17700,8 +17700,6 @@ __webpack_require__(388);
 
 __webpack_require__(391);
 
-__webpack_require__(436);
-
 __webpack_require__(437);
 
 __webpack_require__(438);
@@ -17714,19 +17712,21 @@ __webpack_require__(441);
 
 __webpack_require__(442);
 
-__webpack_require__(445);
+__webpack_require__(443);
 
-__webpack_require__(448);
+__webpack_require__(446);
 
-__webpack_require__(451);
+__webpack_require__(449);
 
-__webpack_require__(454);
+__webpack_require__(452);
 
 __webpack_require__(455);
 
 __webpack_require__(456);
 
 __webpack_require__(457);
+
+__webpack_require__(458);
 
 /***/ }),
 /* 388 */
@@ -17903,13 +17903,14 @@ __webpack_require__(434);
 
 __webpack_require__(435);
 
+__webpack_require__(436);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import directives
+_angular2.default.module('app', ['ui.router', 'ngAnimate', 'ui.bootstrap', 'ngCookies', 'app.directives.rdWidget', 'app.directives.rdWidgetHeader', 'app.directives.rdWidgetBody', 'app.directives.rdWidgetFooter', 'app.directives.rdLoading', 'app.directives.post']);
 //TODO - IMPORT MODULES FROM NODE_DIRECTORY import '../node_modules/bootstrap/dist/css/bootstrap.css'
 //import 'bootstrap/dist/bootstrap.css'
-_angular2.default.module('app', ['ui.router', 'ngAnimate', 'ui.bootstrap', 'ngCookies', 'app.directives.rdWidget', 'app.directives.rdWidgetHeader', 'app.directives.rdWidgetBody', 'app.directives.rdWidgetFooter', 'app.directives.rdLoading']);
-
-//import directives
 
 /***/ }),
 /* 392 */
@@ -68033,6 +68034,39 @@ var _angular2 = _interopRequireDefault(_angular);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+_angular2.default.module('app.directives.post', []).directive('postDirective', postDirective);
+
+function postDirective() {
+   var ddo = {};
+
+   ddo.restrict = "E";
+
+   ddo.scope = {
+      id: "@",
+      title: "@",
+      content: "@",
+      author: "@",
+      date: "@"
+   };
+
+   ddo.templateUrl = "Source/directives/post.directive.html";
+
+   return ddo;
+}
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _angular = __webpack_require__(13);
+
+var _angular2 = _interopRequireDefault(_angular);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 _angular2.default.module('app').config(config);
 
 function config($stateProvider, $urlRouterProvider) {
@@ -68041,50 +68075,50 @@ function config($stateProvider, $urlRouterProvider) {
     url: '/home',
     templateUrl: './Source/pages/home/index.html',
     controller: 'HomeControler',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   }).state({
     name: 'post',
     url: '/post',
     templateUrl: './Source/pages/post/index.html',
     controller: 'PostListControler',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   }).state({
     name: 'company',
     url: '/company',
     templateUrl: './Source/pages/company/index.html',
     controller: 'CompanyListControler',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   }).state({
     name: 'companysave',
     url: '/companysave',
     templateUrl: './Source/pages/company/save.html',
     controller: 'CompanyControler',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   }).state({
     name: 'sample',
     url: '/sample',
     templateUrl: './Source/pages/sample/index.html',
     controller: 'SampleController',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   }).state({
     name: 'modal',
     url: '/modal',
     templateUrl: './Source/pages/modal/modal1.html',
     controller: 'ModalController',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   }).state({
     name: 'user',
     url: '/user',
     templateUrl: './Source/pages/user/index.html',
     controller: 'UserController',
-    controllerAs: 'ctrl'
+    controllerAs: 'vm'
   });
 
   $urlRouterProvider.otherwise('/home');
 }
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68129,7 +68163,7 @@ function MasterCtrl($scope, $cookieStore) {
 }
 
 /***/ }),
-/* 438 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68162,7 +68196,7 @@ function AlertsCtrl($scope) {
 }
 
 /***/ }),
-/* 439 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68182,7 +68216,7 @@ function Post($http, $filter, $q) {
 
   ctrl.list = function () {
     return $http({
-      url: 'xxxx',
+      url: 'http://p8queiroz.com/wp-json/wp/v2/posts/',
       method: 'GET'
     }).then(_treatResponse).catch(_treatError);
   };
@@ -68192,13 +68226,14 @@ function Post($http, $filter, $q) {
   }
 
   function _treatError(error) {
-    console.log('XHR Failed for asdfasdf.' + error.data);
+    console.log('XHR Failed: ' + error.data);
   }
 
   function _parsePost(post) {
     return {
-      ID: post.id,
-      title: post.title,
+      id: post.id,
+      title: post.title.rendered,
+      content: post.content.rendered,
       date: post.date,
       author: post.author
     };
@@ -68212,7 +68247,7 @@ function Post($http, $filter, $q) {
 }
 
 /***/ }),
-/* 440 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68242,7 +68277,7 @@ function Company($http, $filter, $q) {
 }
 
 /***/ }),
-/* 441 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68268,7 +68303,7 @@ function HomeControler($state) {
 }
 
 /***/ }),
-/* 442 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68278,15 +68313,15 @@ var _angular = __webpack_require__(13);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-__webpack_require__(443);
+__webpack_require__(444);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _angular2.default.module('app').controller('PostListControler', PostListControler);
 
-PostListControler.$inject = ['$state', 'Post'];
+PostListControler.$inject = ['$state', 'Post', '$scope'];
 
-function PostListControler($state, Post) {
+function PostListControler($state, Post, $scope) {
   // noinspection BadExpressionStatementJS
   'ngInject';
 
@@ -68298,7 +68333,7 @@ function PostListControler($state, Post) {
   function showPosts() {
 
     return getPosts().then(function (data) {
-      console.log(data);
+      console.log(vm.posts);
     });
   }
 
@@ -68311,13 +68346,13 @@ function PostListControler($state, Post) {
 }
 
 /***/ }),
-/* 443 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(444);
+var content = __webpack_require__(445);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -68342,7 +68377,7 @@ if(false) {
 }
 
 /***/ }),
-/* 444 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(50)(false);
@@ -68356,7 +68391,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 445 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68366,7 +68401,7 @@ var _angular = __webpack_require__(13);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-__webpack_require__(446);
+__webpack_require__(447);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68385,13 +68420,13 @@ function PostControler($scope) {
 }
 
 /***/ }),
-/* 446 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(447);
+var content = __webpack_require__(448);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -68416,7 +68451,7 @@ if(false) {
 }
 
 /***/ }),
-/* 447 */
+/* 448 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(50)(false);
@@ -68430,7 +68465,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 448 */
+/* 449 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68440,7 +68475,7 @@ var _angular = __webpack_require__(13);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-__webpack_require__(449);
+__webpack_require__(450);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68457,13 +68492,13 @@ function CompanyListControler($state) {
 }
 
 /***/ }),
-/* 449 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(450);
+var content = __webpack_require__(451);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -68488,7 +68523,7 @@ if(false) {
 }
 
 /***/ }),
-/* 450 */
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(50)(false);
@@ -68502,7 +68537,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 451 */
+/* 452 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68512,7 +68547,7 @@ var _angular = __webpack_require__(13);
 
 var _angular2 = _interopRequireDefault(_angular);
 
-__webpack_require__(452);
+__webpack_require__(453);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68530,13 +68565,13 @@ function CompanyControler($scope) {
 }
 
 /***/ }),
-/* 452 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(453);
+var content = __webpack_require__(454);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -68561,7 +68596,7 @@ if(false) {
 }
 
 /***/ }),
-/* 453 */
+/* 454 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(50)(false);
@@ -68575,7 +68610,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 454 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68601,7 +68636,7 @@ function SampleController($state) {
 }
 
 /***/ }),
-/* 455 */
+/* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68695,7 +68730,7 @@ function ModalController($uibModal, $document) {
 }
 
 /***/ }),
-/* 456 */
+/* 457 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -68728,7 +68763,7 @@ function Modal1Controller($uibModalInstance, items) {
 }
 
 /***/ }),
-/* 457 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

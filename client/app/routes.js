@@ -11,7 +11,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: './Source/pages/home/index.html',
       controller: 'HomeControler',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
 
     .state({
@@ -19,7 +19,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/post',
       templateUrl: './Source/pages/post/index.html',
       controller: 'PostListControler',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
     
     .state({
@@ -27,7 +27,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/company',
       templateUrl: './Source/pages/company/index.html',
       controller: 'CompanyListControler',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
 
     .state({
@@ -35,7 +35,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/companysave',
       templateUrl: './Source/pages/company/save.html',
       controller: 'CompanyControler',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
     
     .state({
@@ -43,7 +43,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/sample',
       templateUrl: './Source/pages/sample/index.html',
       controller: 'SampleController',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
 
     .state({
@@ -51,7 +51,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/modal',
       templateUrl: './Source/pages/modal/modal1.html',
       controller: 'ModalController',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
 
     .state({
@@ -59,7 +59,7 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/user',
       templateUrl: './Source/pages/user/index.html',
       controller: 'UserController',
-      controllerAs: 'ctrl'
+      controllerAs: 'vm'
     })
 
   $urlRouterProvider.otherwise('/home')

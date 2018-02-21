@@ -5,9 +5,9 @@ angular
   .module('app')
   .controller('PostListControler', PostListControler)
 
-  PostListControler.$inject = ['$state', 'Post']
+  PostListControler.$inject = ['$state', 'Post', '$scope']
 
-function PostListControler ($state, Post) {
+function PostListControler ($state, Post, $scope) {
   // noinspection BadExpressionStatementJS
   'ngInject'
   const vm = this
@@ -18,16 +18,15 @@ function PostListControler ($state, Post) {
   function showPosts() {
  
     return getPosts().then(function(data) {
-      console.log(data)
+        console.log(vm.posts)
     });
   }
 
   function getPosts() {
         return Post.list()
             .then(function(data) {
-                vm.posts = data;
-                return vm.posts;
-             
+              vm.posts = data
+              return vm.posts           
         });
   } 
 

@@ -9,7 +9,7 @@ function Post ($http, $filter, $q) {
   const ctrl = this
 
   ctrl.list = () => $http({
-    url: `xxxx`,
+    url: `http://p8queiroz.com/wp-json/wp/v2/posts/`,
     method: 'GET'
   })
   .then(_treatResponse)
@@ -20,13 +20,14 @@ function Post ($http, $filter, $q) {
   }
 
   function _treatError(error){
-    console.log('XHR Failed for asdfasdf.' + error.data)
+    console.log('XHR Failed: ' + error.data)
   }
 
   function _parsePost(post) {
     return {
-      ID: post.id,
-      title:post.title,
+      id: post.id,
+      title:post.title.rendered,
+      content: post.content.rendered,
       date: post.date,
       author: post.author
     }

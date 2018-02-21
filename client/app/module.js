@@ -15,6 +15,7 @@ import './Source/directives/widget-header.js'
 import './Source/directives/widget-body.js'
 import './Source/directives/widget-footer.js'
 import './Source/directives/loading.js'
+import './Source/directives/post.directive.js'
 
 
 angular
@@ -27,5 +28,6 @@ angular
     'app.directives.rdWidgetHeader',
     'app.directives.rdWidgetBody',
     'app.directives.rdWidgetFooter',
-    'app.directives.rdLoading'
+    'app.directives.rdLoading',
+    'app.directives.post'
   ])
